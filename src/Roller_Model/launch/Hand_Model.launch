@@ -1,0 +1,9 @@
+<launch>
+<node pkg="Roller_Model" type="roller_model_motec" name="Hand_Model_Motec" output="screen">
+    <param name="Z_RT_ID" value="518"/>
+    <param name="Z_SDO_ID" value="1542"/>
+    <param name="Z_RT_ID_READ" value="390"/>
+    <param name="Z_MOTOR_REVERSE" value="1"/>
+
+</node>
+</launch>

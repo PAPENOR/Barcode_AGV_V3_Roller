@@ -1,0 +1,21 @@
+<launch>
+
+<include file="$(find Roller_Model)/launch/Hand_Model.launch"/>
+<include file="$(find Roller_Model)/launch/Roller_Action_Can.launch"/>
+
+
+
+<node pkg="Roller_Motor_Can" type="Roller_State_Can" name="Can_State_Hand" output="screen">
+    <param name="Z_RT_ID" value="518"/>
+    <param name="Z_SDO_ID" value="1542"/>
+    <param name="Z_RT_ID_READ" value="390"/>
+    <param name="Z_IDLE_ID_READ" value="1798"/>
+
+</node>
+
+<node name="Can_Tran_Hand" pkg="Roller_Motor_Can" type="Can_Tran_Hand" />
+<!--node name="Hands_odom" pkg="Roller_Model" type="roller_odom" /-->
+<node name="Task_Manager" pkg="Task_Manager" type="Task_Manager" />
+<node name="system_good_state" pkg="System_Good_state" type="system_good_state" />
+
+</launch>

@@ -1,0 +1,10 @@
+
+<launch>
+<node name="TcpIP_Lora_Server" pkg="TcpIP_server" type="TcpIP_Lora_Server">
+<param name="/PORT" value="1357"/>
+<param name="/Name" value="HND01"/>
+<param name="/Server_ID" value="4"/>
+<param name="/Channel" value="23"/>
+</node>
+</launch>
+

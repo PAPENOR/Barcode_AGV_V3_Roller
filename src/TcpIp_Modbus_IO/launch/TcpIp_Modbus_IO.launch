@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="TcpIp_Modbus_IO" type="TcpIp_Modbus_Reader_CH1" name="TcpIp_Modbus_Reader_Roller_CH1" output="screen">
+        <param name="ip" value="192.168.4.120"/>
+        <param name="port" value="502"/>
+        <rosparam param="regs_addr_read">[0,4]</rosparam>
+        <rosparam param="regs_addr_write_skip">[0]</rosparam>
+    </node>
+    <node pkg="TcpIp_Modbus_IO" type="TcpIp_Modbus_Reader_CH2" name="TcpIp_Modbus_Reader_Roller_CH2" output="screen">
+        <param name="ip" value="192.168.4.121"/>
+        <param name="port" value="502"/>
+        <rosparam param="regs_addr_read">[0,4]</rosparam>
+        <rosparam param="regs_addr_write_skip">[0]</rosparam>
+    </node>
+<node pkg="TcpIp_Modbus_IO" type="TcpIp_IO_Decoder_CH1" name="Modbus_Decode_CH1" output="screen">
+    <param name="Input_ID" value="0"/>
+    <param name="Output_ID" value="1"/>
+    <param name="Right_stick_state_postion_1_ID"    value="1"/>
+    <param name="Right_stick_state_postion_1_Link"  value="true"/>
+    <param name="Right_stick_state_postion_2_ID"    value="2"/>
+    <param name="Right_stick_state_postion_2_Link"  value="true"/>
+    <param name="Left_stick_state_postion_1_ID"     value="3"/>
+    <param name="Left_stick_state_postion_1_Link"   value="true"/>
+    <param name="Left_stick_state_postion_2_ID"     value="4"/>
+    <param name="Left_stick_state_postion_2_Link"   value="true"/>
+    <param name="Z_Up_Limit_ID"                     value="5"/>
+    <param name="Z_Up_Limit_Link"                   value="true"/>
+    <param name="Z_Zero_ID"                         value="6"/>
+    <param name="Zero_Link"                         value="true"/>
+    <param name="Z_Down_Limit_ID"                   value="7"/>
+    <param name="Z_Down_Limit_Link"                 value="true"/>
+    <param name="Right_Limit_ID"                    value="8"/>
+    <param name="Right_Limit_Link"                  value="true"/>
+    <param name="Left_Limit_ID"                     value="9"/>
+    <param name="Left_Limit_Link"                   value="true"/>
+    <param name="Right_Out_ID"                      value="10"/>
+    <param name="Right_Out_Link"                    value="true"/>
+    <param name="Left_Out_ID"                       value="11"/>
+    <param name="Left_Out_Link"                     value="true"/>
+    <param name="Front_stick_state_postion_1_ID"    value="12"/>
+    <param name="Front_stick_state_postion_1_Link"  value="true"/>
+    <param name="Front_stick_state_postion_2_ID"    value="13"/>
+    <param name="Front_stick_state_postion_2_Link"  value="true"/>
+    <param name="Back_stick_state_postion_1_ID"     value="14"/>
+    <param name="Back_stick_state_postion_1_Link"   value="true"/>
+    <param name="Back_stick_state_postion_2_ID"     value="15"/>
+    <param name="Back_stick_state_postion_2_Link"   value="true"/>
+
+    <param name="Roller_Axis_ID_Down"               value="9"/>
+    <param name="Roller_Axis_ID_Launch"             value="8"/>
+    <param name="Roller_Axis_Link"                  value="true"/>
+    <param name="LoraPower_ID"                      value="10"/>
+    <param name="LoraPower_Link"                    value="true"/>
+    <param name="buzzer_ID"                         value="12"/>
+    <param name="buzzer_Link"                       value="true"/>
+    <param name="Red_light_ID"                      value="13"/>
+    <param name="Red_light_Link"                    value="true"/>
+    <param name="Yellow_light_ID"                   value="14"/>
+    <param name="Yellow_light_Link"                 value="true"/>
+    <param name="Green_light_ID"                    value="15"/>
+    <param name="Green_light_Link"                  value="true"/>
+
+</node>
+
+
+<node pkg="TcpIp_Modbus_IO" type="TcpIp_IO_Decoder_CH2" name="Modbus_Decode_CH2" output="screen">
+    <param name="Input_ID" value="0"/>
+    <param name="Output_ID" value="1"/>
+
+    <param name="Right_Stick_Home_State_ID"         value="1"/>
+    <param name="Right_Stick_Home_State_Link"       value="true"/>
+    <param name="Right_Stick_Err_State_ID"          value="2"/>
+    <param name="Right_Stick_Err_State_Link"        value="true"/>
+    <param name="Right_Stick_Inp_State_ID"          value="3"/>
+    <param name="Right_Stick_Inp_State_Link"        value="true"/>
+    <param name="Left_Stick_Home_State_ID"          value="5"/>
+    <param name="Left_Stick_Home_State_Link"        value="true"/>
+    <param name="Left_Stick_Err_State_ID"           value="6"/>
+    <param name="Left_Stick_Err_State_Link"         value="true"/>
+    <param name="Left_Stick_Inp_State_ID"           value="7"/>
+    <param name="Left_Stick_Inp_State_Link"         value="true"/>
+    <param name="Front_Stick_Home_State_ID"         value="9"/>
+    <param name="Front_Stick_Home_State_Link"       value="true"/>
+    <param name="Front_Stick_Err_State_ID"          value="10"/>
+    <param name="Front_Stick_Err_State_Link"        value="true"/>
+    <param name="Front_Stick_Inp_State_ID"          value="11"/>
+    <param name="Front_Stick_Inp_State_Link"        value="true"/>
+    <param name="Back_Stick_Home_State_ID"          value="13"/>
+    <param name="Back_Stick_Home_State_Link"        value="true"/>
+    <param name="Back_Stick_Err_State_ID"           value="14"/>
+    <param name="Back_Stick_Err_State_Link"         value="true"/>
+    <param name="Back_Stick_Inp_State_ID"           value="15"/>
+    <param name="Back_Stick_Inp_State_Link"         value="true"/>
+
+    <param name="Right_Stick_Position_Action_ID"    value="0"/>
+    <param name="Right_Stick_Launch_Action_ID"      value="1"/>
+    <param name="Right_Stick_Home_Action_ID"        value="2"/>
+    <param name="Right_Stick_Reset_Action_ID"       value="3"/>
+    <param name="Right_Stick_Action_Link"           value="true"/>
+    <param name="Left_Stick_Position_Action_ID"     value="4"/>
+    <param name="Left_Stick_Launch_Action_ID"       value="5"/>
+    <param name="Left_Stick_Home_Action_ID"         value="6"/>
+    <param name="Left_Stick_Reset_Action_ID"        value="7"/>
+    <param name="Left_Stick_Action_Link"            value="true"/>
+    <param name="Front_Stick_Position_Action_ID"    value="8"/>
+    <param name="Front_Stick_Launch_Action_ID"      value="9"/>
+    <param name="Front_Stick_Home_Action_ID"        value="10"/>
+    <param name="Front_Stick_Reset_Action_ID"       value="11"/>
+    <param name="Front_Stick_Action_Link"           value="true"/>
+    <param name="Back_Stick_Position_Action_ID"     value="12"/>
+    <param name="Back_Stick_Launch_Action_ID"       value="13"/>
+    <param name="Back_Stick_Home_Action_ID"         value="14"/>
+    <param name="Back_Stick_Reset_Action_ID"        value="15"/>
+    <param name="Back_Stick_Action_Link"            value="true"/>
+
+</node>
+
+
+</launch>

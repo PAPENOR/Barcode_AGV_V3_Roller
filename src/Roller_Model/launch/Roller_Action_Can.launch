@@ -1,0 +1,8 @@
+<launch>
+<node pkg="Roller_Motor_Can" type="Roller_Action_Can" name="Can_Action_Hand" output="screen">
+    <param name="Z_RT_ID" value="518"/>
+    <param name="Z_SDO_ID" value="1542"/>
+    <param name="CAN_PORT" value="0"/>
+
+</node>
+</launch>

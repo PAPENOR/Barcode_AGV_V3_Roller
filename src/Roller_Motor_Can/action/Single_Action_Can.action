@@ -1,0 +1,12 @@
+#goal definition
+int32 motor_ID
+int32 moving_type
+int32 moving_condition
+int32 moving_speed
+bool Brake_wheel
+---
+#result definition
+int32[] end_state
+---
+#feedback
+int32[] now_state
